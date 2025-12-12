@@ -1,13 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Download } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
+import { Download, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface BeforeInstallPromptEvent extends Event {
@@ -93,41 +85,49 @@ export function InstallPrompt() {
   }
 
   return (
-    <Dialog open={showDialog} onOpenChange={setShowDialog}>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <div className="flex items-center gap-3 mb-2">
-            <img
-              src="/logo.png"
-              alt="App Icon"
-              className="h-12 w-12 rounded-lg"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-              }}
-            />
-            <DialogTitle>Install Aviation University Portal</DialogTitle>
+    <div className="fixed bottom-4 right-4 z-50 animate-in slide-in-from-bottom-5">
+      <div className="bg-background border border-border rounded-lg shadow-lg p-4 max-w-sm w-[320px]">
+        <div className="flex items-start gap-3 mb-3">
+          <img
+            src="/logo.png"
+            alt="App Icon"
+            className="h-10 w-10 rounded-lg flex-shrink-0"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+            }}
+          />
+          <div className="flex-1 min-w-0">
+            <h3 className="font-semibold text-sm mb-1">EAU Student Portal</h3>
+            <p className="text-xs text-muted-foreground">
+              Install our app for a better experience! Get quick access and a native app-like experience right from your home screen.
+            </p>
           </div>
-          <DialogDescription>
-            Install our app for a better experience! Get quick access, offline support, and a
-            native app-like experience right from your home screen.
-          </DialogDescription>
-        </DialogHeader>
-        <DialogFooter className="flex-col sm:flex-row gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-6 w-6 flex-shrink-0"
+            onClick={handleDontAskAgain}
+          >
+            <X className="h-4 w-4" />
+          </Button>
+        </div>
+        <div className="flex gap-2">
           <Button
             variant="outline"
+            size="sm"
             onClick={handleDontAskAgain}
-            className="w-full sm:w-auto"
+            className="flex-1 text-xs"
           >
-            Don't ask again
+            Not now
           </Button>
-          <Button onClick={handleInstall} className="w-full sm:w-auto">
-            <Download className="mr-2 h-4 w-4" />
-            Install App
+          <Button onClick={handleInstall} size="sm" className="flex-1 text-xs">
+            <Download className="mr-2 h-3 w-3" />
+            Install
           </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+        </div>
+      </div>
+    </div>
   );
 }
 
