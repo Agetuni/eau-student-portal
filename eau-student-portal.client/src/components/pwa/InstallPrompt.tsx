@@ -86,7 +86,7 @@ export function InstallPrompt() {
 
   return (
     <div className="fixed bottom-4 right-4 z-50 animate-in slide-in-from-bottom-5">
-      <div className="bg-background border border-border rounded-lg shadow-lg p-4 max-w-sm w-[320px]">
+      <div className="bg-background border border-border rounded-lg shadow-lg p-3 sm:p-4 max-w-sm w-[calc(100vw-2rem)] sm:w-[320px]">
         <div className="flex items-start gap-3 mb-3">
           <img
             src="/logo.png"
@@ -98,7 +98,7 @@ export function InstallPrompt() {
             }}
           />
           <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-sm mb-1">EAU Student Portal</h3>
+            <h3 className="font-semibold text-sm mb-1">EAU student portal</h3>
             <p className="text-xs text-muted-foreground">
               Install our app for a better experience! Get quick access and a native app-like experience right from your home screen.
             </p>

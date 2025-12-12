@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Header } from './Header';
 import { Sidebar } from './Sidebar';
 import { MobileSidebar } from './MobileSidebar';
+import { ChatButton } from '@/components/chat/ChatButton';
+import { ChatInterface } from '@/components/chat/ChatInterface';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,6 +12,7 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -29,6 +32,8 @@ export function Layout({ children }: LayoutProps) {
           </div>
         </main>
       </div>
+      <ChatButton onClick={() => setIsChatOpen(true)} isOpen={isChatOpen} />
+      <ChatInterface isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </div>
   );
 }

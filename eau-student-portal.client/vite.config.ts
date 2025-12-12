@@ -11,8 +11,8 @@ export default defineConfig({
       registerType: 'prompt',
       includeAssets: ['logo.png'],
       manifest: {
-        name: 'Aviation University - Student Portal',
-        short_name: 'Aviation University',
+        name: 'EAU student portal',
+        short_name: 'EAU student portal',
         description: 'Student portal for Aviation University',
         theme_color: '#181818',
         background_color: '#ffffff',

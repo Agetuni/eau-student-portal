@@ -60,19 +60,19 @@ export function Header({ onMenuClick }: HeaderProps) {
         </Button>
 
         {/* Logo and Title */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <img
             src="/logo.png"
             alt="Aviation University Logo"
-            className="h-14 w-auto object-contain"
+            className="h-8 w-auto object-contain sm:h-10 md:h-14"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               target.style.display = 'none';
             }}
           />
           <div className="flex flex-col">
-            <span className="text-xl font-semibold leading-none">Ethiopian Aviation University</span>
-            <span className="text-xs text-muted-foreground">Student Portal</span>
+            <span className="text-sm font-semibold leading-tight sm:text-base md:text-xl">Ethiopian Aviation University</span>
+            <span className="text-[10px] text-muted-foreground sm:text-xs">Student Portal</span>
           </div>
         </div>
 
