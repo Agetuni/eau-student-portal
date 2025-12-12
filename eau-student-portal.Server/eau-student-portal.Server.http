@@ -1,0 +1,6 @@
+@eau_student_portal.Server_HostAddress = http://localhost:5238
+
+GET {{eau_student_portal.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
