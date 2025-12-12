@@ -6,6 +6,7 @@ import { Dashboard } from '@/pages/dashboard';
 import { Profile } from '@/pages/profile';
 import { NotFound } from '@/pages/NotFound';
 import { Toaster } from 'sonner';
+import { InstallPrompt } from '@/components/pwa/InstallPrompt';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuth();
@@ -53,6 +54,7 @@ function App() {
       <AuthProvider>
         <AppRoutes />
         <Toaster position="top-right" />
+        <InstallPrompt />
       </AuthProvider>
     </BrowserRouter>
   );

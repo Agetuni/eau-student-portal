@@ -12,13 +12,12 @@ export function Footer() {
               <img
                 src="/logo.png"
                 alt="Aviation University Ribbon"
-                className="h-8 w-auto object-contain"
+                className="h-16 w-auto object-contain"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
                 }}
               />
-              <span className="text-lg font-semibold text-primary">Aviation University</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Empowering the next generation of aviation professionals through excellence in

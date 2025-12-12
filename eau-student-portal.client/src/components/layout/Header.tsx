@@ -59,25 +59,28 @@ export function Header({ onMenuClick }: HeaderProps) {
           <Menu className="h-5 w-5" />
         </Button>
 
-        {/* Logo and Brand */}
-        <div className="flex items-center gap-2">
+        {/* Logo and Title */}
+        <div className="flex items-center gap-3">
           <img
             src="/logo.png"
             alt="Aviation University Logo"
-            className="h-10 w-auto object-contain"
+            className="h-14 w-auto object-contain"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               target.style.display = 'none';
             }}
           />
-          <div className="hidden sm:flex flex-col">
-            <span className="text-sm font-semibold leading-none">Aviation University</span>
+          <div className="flex flex-col">
+            <span className="text-xl font-semibold leading-none">Ethiopian Aviation University</span>
             <span className="text-xs text-muted-foreground">Student Portal</span>
           </div>
         </div>
 
+        {/* Spacer to push items to the right */}
+        <div className="flex-1" />
+
         {/* Right side actions */}
-        <div className="flex flex-1 items-center justify-end gap-2">
+        <div className="flex items-center gap-2">
           {/* Theme Toggle */}
           <ThemeToggle />
 

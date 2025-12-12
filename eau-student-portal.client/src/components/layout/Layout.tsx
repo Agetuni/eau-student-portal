@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Header } from './Header';
 import { Sidebar } from './Sidebar';
 import { MobileSidebar } from './MobileSidebar';
-import { Footer } from './Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -30,7 +29,6 @@ export function Layout({ children }: LayoutProps) {
           </div>
         </main>
       </div>
-      <Footer />
     </div>
   );
 }
