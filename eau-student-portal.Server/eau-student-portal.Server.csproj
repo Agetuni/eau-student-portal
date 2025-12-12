@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>eau_student_portal.Server</RootNamespace>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
     <SpaRoot>..\eau-student-portal.client</SpaRoot>
     <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:54694</SpaProxyServerUrl>
