@@ -4,11 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/fav.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Portal</title>
+    <title>Aviation University - Student Portal</title>
+    <script>
+      // Prevent flash of unstyled content
+      (function() {
+        const theme = localStorage.getItem('theme') || 'system';
+        const resolvedTheme = theme === 'system' 
+          ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+          : theme;
+        if (resolvedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-z
