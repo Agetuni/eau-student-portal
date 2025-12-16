@@ -89,9 +89,20 @@ export function ChatInterface({ isOpen, onClose }: ChatInterfaceProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-x-0 top-16 bottom-0 z-[100] flex flex-col bg-background">
+    <div
+      className={cn(
+        'fixed z-[100] flex flex-col bg-background',
+        // Mobile: Full screen
+        'inset-x-0 top-16 bottom-0',
+        // Desktop: Small popup
+        'md:bottom-24 md:right-6 md:top-auto md:left-auto md:w-[600px] md:h-[700px] md:border md:rounded-lg md:shadow-2xl'
+      )}
+    >
       {/* Chat Header */}
-      <div className="flex items-center justify-between border-b px-4 py-3 h-14">
+      <div className={cn(
+        'flex items-center justify-between border-b px-4 py-3 h-14',
+        'md:rounded-t-lg'
+      )}>
         <div className="flex items-center gap-2">
           <Bot className="h-5 w-5" />
           <h2 className="text-lg font-semibold">AI Assistant</h2>
@@ -130,8 +141,15 @@ export function ChatInterface({ isOpen, onClose }: ChatInterfaceProps) {
       </ScrollArea>
 
       {/* Input Area */}
-      <div className="border-t p-4">
-        <div className="flex gap-2 items-end max-w-4xl mx-auto">
+      <div className={cn(
+        'border-t p-4',
+        'md:rounded-b-lg'
+      )}>
+        <div className={cn(
+          'flex gap-2 items-end',
+          'max-w-4xl mx-auto',
+          'md:max-w-none md:mx-0'
+        )}>
           <textarea
             ref={inputRef}
             value={input}
